@@ -6,14 +6,29 @@ const Header = React.lazy(() => import('headerApp/Header'))
 
 function App() {
   return (
-    <>
-      <Suspense fallback={<div>Loading header...</div>}>
+    <div style={{ 
+      minHeight: '100vh',
+      display: 'flex',
+      flexDirection: 'column',
+      width: '100%'
+    }}>
+      <Suspense fallback={<div style={{ 
+        padding: '1rem', 
+        backgroundColor: '#2c3e50',
+        color: 'white',
+        textAlign: 'center',
+        width: '100%'
+      }}>Loading header...</div>}>
         <Header />
       </Suspense>
-      <div style={{ padding: '20px' }}>
+      <main style={{ 
+        flex: 1,
+        padding: '20px'
+      }}>
         <h2>Contenu du Shell</h2>
-      </div>
-    </>
+        <p>Ceci est le contenu du shell</p>
+      </main>
+    </div>
   )
 }
 
